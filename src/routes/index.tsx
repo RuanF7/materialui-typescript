@@ -1,6 +1,6 @@
-import { Button } from "@mui/material";
-import { Routes, Route,  Navigate } from "react-router-dom";
-import { useAppThemeContext } from "../shared/contexts";
+import { Button } from '@mui/material';
+import { Routes, Route,  Navigate } from 'react-router-dom';
+import { useAppThemeContext } from '../shared/contexts';
 
 
 export const AppRoutes = () => {
@@ -13,5 +13,4 @@ export const AppRoutes = () => {
       <Route path='*' element={<Navigate to='/pagina-inicial'/> } />
     </Routes>
   );
-
-}
+};

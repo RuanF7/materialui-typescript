@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 import { Box, ThemeProvider } from '@mui/material';
 import { LightTheme, DarkTheme } from './../themes';
 
@@ -17,8 +17,9 @@ const ThemeContext = createContext ({} as IThemeContextData);
 
 export const useAppThemeContext = () => {
   return useContext(ThemeContext);
-}
+};
 
+// eslint-disable-next-line react/prop-types
 export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({children}) => {
   const [themeName, setThemeName] = useState<'light' | 'dark'>('light');
  
@@ -39,5 +40,5 @@ export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({children}) =
         </Box>
       </ThemeProvider>
     </ThemeContext.Provider>
-  )
-}
+  );
+};
