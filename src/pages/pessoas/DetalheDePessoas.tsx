@@ -1,7 +1,9 @@
-import { LinearProgress } from '@mui/material';
+import { LinearProgress, TextField } from '@mui/material';
+import { Form } from '@unform/web';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FerramentasDeDetalhe } from '../../shared/components';
+import { VTextField } from '../../shared/forms';
 import { LayoutBaseDePagina } from '../../shared/layouts';
 import { PessoasService } from '../../shared/services/pessoas/PessoasService';
 
@@ -43,7 +45,7 @@ export const DetalheDePessoas: React.FC = () => {
         .then(result => {
           if (result instanceof Error) {
             alert(result.message);
-          } else {            
+          } else {
             alert('Registro apagado com sucesso!');
             navigate('/pessoas');
           }
@@ -72,11 +74,16 @@ export const DetalheDePessoas: React.FC = () => {
       }
     >
 
-      {isLoading && (
-        <LinearProgress variant='indeterminate' />
-      )}
+      <Form onSubmit={ (dados) => console.log(dados)}>
 
-      <p>DetalheDePessoas{id}</p>
+        <VTextField
+          name='nomeCompleto'
+
+        />
+
+        <button type='submit'>Submit</button>
+      </Form>
+
     </LayoutBaseDePagina>
   );
 };
