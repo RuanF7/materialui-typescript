@@ -7,6 +7,7 @@ import { PessoasService } from '../../shared/services/pessoas/PessoasService';
 import { VForm, useVForm, VTextField, IVFormErrors } from '../../shared/forms';
 import { FerramentasDeDetalhe } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
+import { AutoCompleteCidade } from './components/AutoCompleteCidade';
 
 
 interface IFormData {
@@ -50,7 +51,7 @@ export const DetalheDePessoas: React.FC = () => {
       formRef.current?.setData({
         nomeCompleto: '',
         email: '',
-        cidadeId: '',
+        cidadeId: undefined,
       });
     }
   }, [id]);
@@ -103,7 +104,7 @@ export const DetalheDePessoas: React.FC = () => {
 
           validationErrors[error.path] = error.message;
         });
-        
+
         formRef.current?.setErrors(validationErrors);
       });
   };
@@ -182,13 +183,8 @@ export const DetalheDePessoas: React.FC = () => {
             </Grid>
 
             <Grid container item direction='row'>
-              <Grid item xs={8} sm={12} md={6} lg={4} xl={2}>
-                <VTextField
-                  fullWidth
-                  label='Cidade id'
-                  name='cidadeId'
-                  disabled={isLoading}
-                />
+              <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+                <AutoCompleteCidade isExternalLoading={isLoading} />
               </Grid>
             </Grid>
           </Grid>
