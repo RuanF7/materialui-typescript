@@ -72,5 +72,15 @@
       "cidadeId": "1",
       "id": 16
     }
+  ],
+  "cidades": [
+    {
+      "id": 1,
+      "nome": "Porto Alegre"
+    },
+    {
+      "nome": "Búzios",
+      "id": 2
+    }
   ]
 }
