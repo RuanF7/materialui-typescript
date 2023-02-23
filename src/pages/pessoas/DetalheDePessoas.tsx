@@ -11,7 +11,7 @@ import { PessoasService } from '../../shared/services/pessoas/PessoasService';
 
 interface IFormData {
   email: string;
-  cidadeId: string;
+  cidadeId: number;
   nomeCompleto: string;
 }
 
@@ -38,13 +38,40 @@ export const DetalheDePessoas: React.FC = () => {
           } else {
             setNome(result.nomeCompleto);
             console.log(result);
+
+            formRef.current?.setData(result);
           }
         });
     }
   }, [id]);
 
   const handleSave = (dados: IFormData) => {
-    console.log(dados);
+    setIsLoading(true);
+
+    if (id === 'nova') {
+      PessoasService
+        .create(dados)
+        .then((result) => {
+          setIsLoading(false);
+
+          if (result instanceof Error) {
+            alert(result.message);
+          } else {
+            navigate(`/pessoas/detalhe/${result}`);
+          }
+        });
+
+    } else {
+      PessoasService
+        .updateById(Number(id), {id: Number(id), ...dados})
+        .then((result) => {
+          setIsLoading(false);
+
+          if (result instanceof Error) {
+            alert(result.message);
+          }
+        });
+    }
   };
 
   const handleDelete = (id: number) => {
