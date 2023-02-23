@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
+import './shared/forms/TraducoesYup';
 
 import { AppRoutes } from './routes';
 import { MenuLateral } from './shared/components';
@@ -18,4 +19,4 @@ export const App = () => {
       </DrawerProvider>
     </AppThemeProvider>
   );
-};
+}; 
