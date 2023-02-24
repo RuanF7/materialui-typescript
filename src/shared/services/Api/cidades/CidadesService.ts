@@ -1,5 +1,5 @@
-import { Environment } from '../../environment';
-import { Api } from '../Api/axios-config';
+import { Environment } from '../../../environment';
+import { Api } from '../axios-config';
 
 
 export interface IListagemCidade {

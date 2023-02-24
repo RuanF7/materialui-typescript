@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Icon, IconButton, LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow } from '@mui/material';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
-import { IListagemCidade, CidadesService } from '../../shared/services/cidades/CidadesService';
+import { IListagemCidade, CidadesService } from '../../shared/services/Api/cidades/CidadesService';
 import { FerramentasDaListagem } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
 import { Environment } from '../../shared/environment';

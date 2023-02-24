@@ -106,5 +106,8 @@
       "nome": "Belo Horizonte",
       "id": 9
     }
-  ]
+  ],
+  "auth": {
+    "accessToken": "aaaaaaaaaa.bbbbbbbbbb.cccccccccc"
+  }
 }

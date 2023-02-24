@@ -2,7 +2,7 @@ import { Autocomplete, CircularProgress, TextField } from '@mui/material';
 import { useField } from '@unform/core';
 import { useEffect, useMemo, useState } from 'react';
 import { useDebounce } from '../../../shared/hooks';
-import { CidadesService } from '../../../shared/services/cidades/CidadesService';
+import { CidadesService } from '../../../shared/services/Api/cidades/CidadesService';
 
 type TAutoCompleteOption = {
   id: number;

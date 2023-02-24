@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 
 import { FerramentasDaListagem } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
-import { CidadesService } from '../../shared/services/cidades/CidadesService';
-import { PessoasService } from '../../shared/services/pessoas/PessoasService';
+import { CidadesService } from '../../shared/services/Api/cidades/CidadesService';
+import { PessoasService } from '../../shared/services/Api/pessoas/PessoasService';
 
 
 

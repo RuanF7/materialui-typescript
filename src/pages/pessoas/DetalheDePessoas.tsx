@@ -3,7 +3,7 @@ import { Box, Grid, LinearProgress, Paper, Typography } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 import * as yup from 'yup';
 
-import { PessoasService } from '../../shared/services/pessoas/PessoasService';
+import { PessoasService } from '../../shared/services/Api/pessoas/PessoasService';
 import { VForm, useVForm, VTextField, IVFormErrors } from '../../shared/forms';
 import { FerramentasDeDetalhe } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
